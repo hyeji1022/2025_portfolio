@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-<link rel="stylesheet" href="css/common.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>llolx Portfolio</title>
+<link rel="stylesheet" href="css/common.css" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
 
 <header>
-  <h1>My Name</h1>
-  <p>Product Designer | Creative Thinker</p>
+  <nav class="navbar">
+    <a href="#">home</a>
+    <a href="#projects">projects</a>
+    <a href="#about">about me</a>
+    <a href="#contact">contact</a>
+  </nav>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<main class="container">
+  <section class="intro counters">
+    <h1 class="count" data-start="2000" data-end="2025"><span>2000</span></h1>
+    <h1>portfolio.</h1>
+    <p>
+      나는 사용성과 효율성을 중시하는 프로덕트 디자이너입니다. 다양한 분야의 프로젝트를 통해 사용자의 경험을 최우선으로 디자인합니다.<br>
+      나는 사용성과 효율성을 중시하는 프로덕트 디자이너입니다. 다양한 분야의 프로젝트를 통해 사용자의 경험을 최우선으로 디자인합니다.<br>
+      나는 사용성과 효율성을 중시하는 프로덕트 디자이너입니다. 다양한 분야의 프로젝트를 통해 사용자의 경험을 최우선으로 디자인합니다.
+    </p>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a product designer with a passion for creating intuitive and delightful user experiences. My work spans across fintech, healthcare AI, and e-commerce sectors, driven by a design philosophy that values usability and visual harmony.</p>
-</section>
+  <section id="projects" class="projects">
+    <h2>Digital Products</h2>
+    <div class="grid">
+      <div class="project-card"><img src="project1.jpg" alt=""><p>29CM Brand Popup</p></div>
+      <div class="project-card"><img src="project2.jpg" alt=""><p>29CM GiftHome</p></div>
+      <div class="project-card"><img src="project3.jpg" alt=""><p>29CM Style Onboarding</p></div>
+      <div class="project-card"><img src="project4.jpg" alt=""><p>29CM Product List</p></div>
+      <div class="project-card"><img src="project5.jpg" alt=""><p>29CM Like</p></div>
+      <div class="project-card"><img src="project6.jpg" alt=""><p>29CM Home</p></div>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>Fintech App Design</h3>
-    <p>Redesigned the onboarding flow and product listing for an innovative fintech app, increasing user engagement by 25%.</p>
-  </div>
-  <div class="project">
-    <h3>Healthcare AI Dashboard</h3>
-    <p>Led the design of a real-time health monitoring dashboard, focusing on clarity and actionable insights for doctors.</p>
-  </div>
-</section>
+  <section class="projects">
+    <h2>Brand Experiences</h2>
+    <div class="grid">
+      <div class="project-card"><img src="brand1.jpg" alt=""><p>29CM SNS Guide</p></div>
+      <div class="project-card"><img src="brand2.jpg" alt=""><p>Episode Scenography 121</p></div>
+      <div class="project-card"><img src="brand3.jpg" alt=""><p>Marina Hill Jeju</p></div>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Let's connect! Reach me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-</section>
+  <section id="about" class="about">
+    <div class="profile_img">
+    </div>
+   <p></p>
+  </section>
+  
+  <section id="contact" class="contact">
+ 
+  </section>
+</main>
 
 <footer>
-  <p>&copy; 2025 My Name</p>
+  <p>&copy; 2025 llolx. All rights reserved.</p>
 </footer>
+
+<!--숫자 카운팅-->
+<script>
+  const counters = document.querySelectorAll('.count');
+  const intervalTime = 50; // 숫자 간격(밀리초)
+
+  counters.forEach(counter => {
+    const start = +counter.getAttribute('data-start');
+    const end = +counter.getAttribute('data-end');
+    let current = start;
+
+    const updateCount = () => {
+      if (current < end) {
+        current++;
+        counter.innerText = current;
+        setTimeout(updateCount, intervalTime);
+      }
+    };
+    updateCount();
+  });
+</script>
+
 
 </body>
 </html>

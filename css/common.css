@@ -1,75 +1,126 @@
+/* 기본 스타일 */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
+  color: #303030;
+  background: #fff;
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  letter-spacing: -0.0375em;
 }
 
+
+/* header */
 header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: #4f81f7;
-  color: white;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  padding: 1rem 0;
 }
 
-header p {
-  font-size: 1.2rem;
-}
-
-nav {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 0.5rem 0;
-}
-
-nav ul {
-  list-style: none;
-}
-
-nav li {
-  display: inline;
-  margin: 0 1rem;
-}
-
-nav a {
-  color: white;
+.navbar a {
+  font-family: 'Roboto Mono', monospace;
   text-decoration: none;
+  color: #303030;
+  letter-spacing: 1px;
 }
 
-section {
-  padding: 2rem;
-  max-width: 800px;
+/* contents */
+.container {
+  max-width: 1400px;
   margin: auto;
+  padding: 8rem 1rem 3rem; /* 헤더 높이만큼 top 패딩 추가 */
 }
 
-section h2 {
-  margin-bottom: 1rem;
-  color: #4f81f7;
+/* intro */
+.intro{
+  margin-bottom: 10rem;
 }
 
-.project {
-  background: white;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.intro h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.intro p {
+  margin-top: 4rem;
 }
 
+
+/* project */
+
+.projects {
+  margin-bottom: 4rem;
+}
+
+.projects h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fafafa;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-card p {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+
+
+/* about me */
+.about {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.about .profile_img {
+  width: 420px;
+  height: 550px;
+  background: url("/image/profile2.png") no-repeat center/cover;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+/* footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: white;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 2rem 1rem;
+  border-top: 1px solid #eee;
 }
