@@ -9,8 +9,12 @@ body {
   font-family: 'Pretendard Variable', sans-serif;
   color: #303030;
   background: #fff;
-  line-height: 1.6;
+  line-height: 1.5;
   letter-spacing: -0.0375em;
+}
+
+section {
+  margin-bottom: 20rem;
 }
 
 
@@ -37,6 +41,11 @@ header {
   text-decoration: none;
   color: #303030;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled a {
+  color: #5c64f1;
 }
 
 /* contents */
@@ -57,17 +66,31 @@ header {
   font-weight: 400;
   line-height: 1.1;
 }
+
 .intro p {
   margin-top: 4rem;
 }
 
-
-/* project */
-
-.projects {
-  margin-bottom: 4rem;
+.counter {
+  display: flex;
+  font-size: 48px;
+  overflow: hidden;
+  height: 100px;     /* 숫자 1개의 높이 */
 }
 
+.digit-container {
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s ease-in-out;
+}
+
+.digit {
+  height: 60px;     /* 숫자 1개의 높이 */
+  line-height: 60px;
+}
+
+
+/* project */
 .projects h2 {
   font-family: 'Roboto Mono', monospace;
   font-size: 1.4rem;
@@ -77,19 +100,22 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
 .project-card {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #fafafa;
   text-align: center;
 }
 
-.project-card img {
+.project-card .img-wrap {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.project-card .img-wrap img {
   width: 100%;
   display: block;
 }
@@ -103,17 +129,106 @@ header {
 /* about me */
 .about {
   font-size: 1rem;
-  margin-bottom: 3rem;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.about .profile_img {
-  width: 420px;
+.about .profile-img {
+  /*width: 420px;
   height: 550px;
   background: url("/image/profile2.png") no-repeat center/cover;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: hidden;*/
+  width: 20%;
 }
+
+.about .profile-img img {
+  width: 100%;
+}
+
+.about .profile-img p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about .profile-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*height: 200vh; /* 스크롤을 위해 높이 추가 */
+  padding: 20px;
+  height: 24rem;
+}
+
+.about .profile-cont h2 {
+  font-size: 1.1rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  margin-bottom: 1.13rem;
+}
+
+.about .profile-cont .profile p {
+  margin-bottom: 0.5rem;
+}
+
+.about .profile-cont .skills ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  height: 2.5rem;
+}
+
+.about .profile-cont .skills img {
+  width: 2rem;
+}
+
+.about .profile-cont .skills ul li .gauge-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 220px;
+} 
+
+.about .profile-cont .skills .gauge-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  overflow: hidden;
+  }
+
+
+.about .profile-cont .skills .gauge-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: #a259ff;
+  transition: width 1s ease-out;
+}
+
+.about .profile-cont ul {
+  list-style: none;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.about .profile-cont ul li {
+ margin-bottom: 1rem;
+}
+
+.about .profile-cont ul li:last-child {
+ margin-bottom: 0;
+}
+
+.about .profile-cont ul .period {
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  color: #A2A2A2;
+}
+
 
 
 /* footer */
