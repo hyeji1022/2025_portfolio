@@ -18,29 +18,7 @@ counters.forEach(counter => {
 });
 
 
-// 2️⃣ 섹션별로 navbar 링크 색상 변경
-const navbarLinks = document.querySelectorAll('.navbar a');
-const sections = document.querySelectorAll('section');
-
-const observerOptions = {
-  threshold: 0.6 // 섹션이 60% 이상 보일 때 트리거
-};
-
-const colorObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const newColor = entry.target.getAttribute('data-color');
-      navbarLinks.forEach(link => {
-        link.style.color = newColor;
-      });
-    }
-  });
-}, observerOptions);
-
-sections.forEach(section => colorObserver.observe(section));
-
-
-// 3️⃣ // 3️⃣ 여러 개의 게이지바 애니메이션
+// 2️⃣ 여러 개의 게이지바 애니메이션
 const gaugeContainers = document.querySelectorAll('.gauge-container');
 
 const gaugeObserver = new IntersectionObserver((entries) => {

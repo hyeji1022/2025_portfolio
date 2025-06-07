@@ -14,8 +14,25 @@ body {
 }
 
 section {
-  margin-bottom: 20rem;
+  padding: 8rem 0;
 }
+
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+
+h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
 
 
 /* header */
@@ -44,8 +61,9 @@ header {
   transition: color 0.3s ease;
 }
 
-.navbar.scrolled a {
+.navbar a:hover {
   color: #5c64f1;
+
 }
 
 /* contents */
@@ -56,16 +74,7 @@ header {
 }
 
 /* intro */
-.intro{
-  margin-bottom: 10rem;
-}
 
-.intro h1 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 6rem;
-  font-weight: 400;
-  line-height: 1.1;
-}
 
 .intro p {
   margin-top: 4rem;
@@ -91,13 +100,6 @@ header {
 
 
 /* project */
-.projects h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -127,7 +129,7 @@ header {
 
 
 /* about me */
-.about {
+.about .aboutme-wrap {
   font-size: 1rem;
   text-align: left;
   display: flex;
@@ -157,12 +159,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*height: 200vh; /* 스크롤을 위해 높이 추가 */
   padding: 20px;
   height: 24rem;
 }
 
-.about .profile-cont h2 {
+.about .profile-cont h3 {
   font-size: 1.1rem;
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
