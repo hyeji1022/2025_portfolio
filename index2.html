@@ -3,105 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>llolx Portfolio</title>
-    <link rel="stylesheet" href="css/common.css" />
+    <title>llolx 2025 Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="#">home</a>
-        <a href="#projects">projects</a>
-        <a href="#about">about me</a>
-        <a href="#contact">contact</a>
-      </nav>
-    </header>
 
-    <main class="container">
-      <section class="intro counters">
-        <h1 class="count" data-start="2015" data-end="2025">
-          <span>2000</span>
-        </h1>
-        <h1>portfolio.</h1>
-        <p>
-          저는 세심한 관찰력과 탁월한 소통 능력을 바탕으로 사용자의 목소리를
-          디자인에 담아내는 디자이너입니다.<br />
-          작은 디테일 하나까지도 놓치지 않고 완성도를 높이며, 다양한 팀원과의
-          협업을 통해 목표를 명확히 하고 아이디어를 구체화하는 과정에 강점을
-          가지고 있습니다.<br />
-          늘 열린 마음으로 의견을 듣고, 사용자와의 교감을 최우선으로 삼아
-          디자인을 만듭니다. 꼼꼼함과 소통을 무기로, 사용자가 사랑할 수 있는
-          결과물을 만들어내는 디자이너로서 함께할 수 있길 기대합니다!
-        </p>
+  <body>
+    <!-- 왼쪽 고정 네비게이션 -->
+    <nav class="side-nav">
+      <div class="title">
+        <a href="#title">2025 Portfolio</a>
+      </div>
+      <ul>
+        <li>
+          <a href="#projects">Projects <sup>01</sup></a>
+        </li>
+        <li>
+          <a href="#about-me">About me <sup>02</sup></a>
+        </li>
+        <li>
+          <a href="#contact">Contact <sup>03</sup></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="content">
+      <section id="title">
+        <h1>2025 Portfolio</h1>
+        <p style="font-style: italic; font-weight: 300">By Hyeji Jang</p>
       </section>
 
-      <section id="projects" class="projects" data-color="#5c64f1">
-        <h2>projects</h2>
-        <div class="grid">
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-01.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
+      <section id="projects">
+        <div class="sub-title">
+          <h2>Projects</h2>
+          <sup>01</sup>
+        </div>
+        <div class="project-grid">
+          <div class="project-thumb">
+            <img src="/image/project-01.jpg" />
+            <p>데이터메니티</p>
           </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-02.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
+          <div class="project-thumb">
+            <img src="/image/project-01.jpg" />
+            <p>ㅎㅎ</p>
           </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-03.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
+          <div class="project-thumb">
+            <img src="/image/project-01.jpg" />
+            <p>ㅎㅎ</p>
           </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-04.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
-          </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-05.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
-          </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-06.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
-          </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-07.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
-          </div>
-          <div class="project-card">
-            <div class="img-wrap">
-              <img src="/image/project-08.jpg" alt="" />
-            </div>
-            <p>프로젝트명</p>
+          <div class="project-thumb">
+            <img src="/image/project-01.jpg" />
+            <p>ㅎㅎ</p>
           </div>
         </div>
       </section>
 
-      <section id="about" class="about" data-color="#5c64f1">
-        <h2>about me</h2>
+      <section id="about-me">
+        <div class="sub-title">
+          <h2>About me</h2>
+          <sup>02</sup>
+        </div>
         <div class="aboutme-wrap">
           <div class="profile-img">
             <img src="/image/profile2.png" alt="프로필 이미지" />
-            <p>머시기 디자이너 장혜지 입니다.</p>
+            <!--p>머시기 디자이너 장혜지 입니다.</p-->
           </div>
           <div class="profile-cont">
             <div class="profile">
@@ -258,13 +229,37 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="contact" data-color="#5c64f1"></section>
+
+      <section id="contact">
+        <div class="sub-title">
+          <h2>Contact</h2>
+          <sup>03</sup>
+        </div>
+        <img src="logo-main.jpg" alt="logo" />
+        <p>로고 구성 및 보호영역, 로고 사용 가이드 설명...</p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 hyeji jang. All rights reserved.</p>
+      </footer>
     </main>
 
-    <footer>
-      <p>&copy; 2025 llolx. All rights reserved.</p>
-    </footer>
+    <script>
+      const toggleBtn = document.getElementById("menuToggle");
+      const sideNav = document.getElementById("sideNav");
 
+      toggleBtn.addEventListener("click", () => {
+        sideNav.classList.toggle("open");
+      });
+
+      // 메뉴 클릭 시 자동으로 닫히게
+      const navLinks = document.querySelectorAll(".side-nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          sideNav.classList.remove("open");
+        });
+      });
+    </script>
     <script src="/js/script.js"></script>
   </body>
 </html>

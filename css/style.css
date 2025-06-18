@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  background: #fff;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+}
+
+section {
+  padding: 2.5rem 0 7rem;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* 좌측 네비게이션 */
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  border-right: 1px solid #eee;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  padding: 1.5rem 2rem;
+}
+
+.side-nav li {
+  margin-bottom: 0.8rem;
+}
+
+.side-nav a {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.side-nav a:hover {
+  color: #000;
+}
+
+.side-nav a sup {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+/* 콘텐츠 영역 */
+.content {
+  margin-left: 260px;
+  padding: 0 2.5rem 2.5rem;
+  min-width: 960px;
+  flex: 1;
+}
+
+.sub-title {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.sub-title sup {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* projects */
+#title {
+  padding: 2.5rem 0 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.project-thumb img {
+  margin-bottom: 1rem;
+}
+
+/* about me */
+.aboutme-wrap {
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-img {
+  /*width: 420px;
+  height: 550px;
+  background: url("/image/profile2.png") no-repeat center/cover;
+  border-radius: 50%;
+  overflow: hidden;*/
+  width: 20%;
+}
+
+.profile-img img {
+  width: 100%;
+}
+
+.profile-img p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 24rem;
+}
+
+.profile-cont h3 {
+  font-size: 1.3rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1.13rem;
+}
+
+.profile-cont .profile p {
+  margin-bottom: 0.5rem;
+}
+
+.profile-cont .skills ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  height: 2.5rem;
+}
+
+.profile-cont .skills img {
+  width: 2rem;
+}
+
+.profile-cont .skills ul li .gauge-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 220px;
+}
+
+.profile-cont .skills .gauge-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+
+.profile-cont .skills .gauge-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: #a259ff;
+  transition: width 1s ease-out;
+}
+
+.profile-cont ul {
+  list-style: none;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.profile-cont ul li {
+  margin-bottom: 1rem;
+}
+
+.profile-cont ul li:last-child {
+  margin-bottom: 0;
+}
+
+.profile-cont ul .period {
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  color: #a2a2a2;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ✅ 반응형 처리 */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .side-nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 2rem 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-nav.open {
+    left: 0;
+  }
+
+  .side-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .art-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
