@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Pretendard Variable', sans-serif;
+  font-family: "Pretendard Variable", sans-serif;
   color: #303030;
   background: #fff;
   line-height: 1.5;
@@ -17,23 +17,19 @@ section {
   padding: 8rem 0;
 }
 
-
 h1 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 6rem;
   font-weight: 400;
   line-height: 1.1;
 }
 
-
 h2 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
 }
-
-
 
 /* header */
 header {
@@ -54,7 +50,7 @@ header {
 }
 
 .navbar a {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   text-decoration: none;
   color: #303030;
   letter-spacing: 1px;
@@ -63,7 +59,6 @@ header {
 
 .navbar a:hover {
   color: #5c64f1;
-
 }
 
 /* contents */
@@ -75,7 +70,6 @@ header {
 
 /* intro */
 
-
 .intro p {
   margin-top: 4rem;
 }
@@ -84,7 +78,7 @@ header {
   display: flex;
   font-size: 48px;
   overflow: hidden;
-  height: 100px;     /* 숫자 1개의 높이 */
+  height: 100px; /* 숫자 1개의 높이 */
 }
 
 .digit-container {
@@ -94,10 +88,9 @@ header {
 }
 
 .digit {
-  height: 60px;     /* 숫자 1개의 높이 */
+  height: 60px; /* 숫자 1개의 높이 */
   line-height: 60px;
 }
-
 
 /* project */
 .grid {
@@ -126,7 +119,6 @@ header {
   padding: 0.5rem;
   font-size: 0.95rem;
 }
-
 
 /* about me */
 .about .aboutme-wrap {
@@ -165,7 +157,7 @@ header {
 
 .about .profile-cont h3 {
   font-size: 1.1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: 400;
   margin-bottom: 1.13rem;
 }
@@ -191,7 +183,7 @@ header {
   flex-direction: column;
   gap: 0.5rem;
   width: 220px;
-} 
+}
 
 .about .profile-cont .skills .gauge-bar {
   position: relative;
@@ -199,8 +191,7 @@ header {
   border-radius: 4px;
   background: #e0e0e0;
   overflow: hidden;
-  }
-
+}
 
 .about .profile-cont .skills .gauge-fill {
   width: 0;
@@ -217,20 +208,18 @@ header {
 }
 
 .about .profile-cont ul li {
- margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .about .profile-cont ul li:last-child {
- margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .about .profile-cont ul .period {
   margin-top: 0.3rem;
   font-size: 0.88rem;
-  color: #A2A2A2;
+  color: #a2a2a2;
 }
-
-
 
 /* footer */
 footer {
