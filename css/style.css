@@ -203,7 +203,7 @@ ol {
 .thumb-img {
   width: 100%;
   height: 350px;
-  background: url("/image/thumb_datamenity.png") center / cover no-repeat;
+  background: url("./image/thumb_datamenity.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
 }
 
@@ -370,7 +370,7 @@ ol {
 .profile-img {
   /*width: 420px;
   height: 550px;
-  background: url("/image/profile2.png") no-repeat center/cover;
+  background: url("./image/profile2.png") no-repeat center/cover;
   border-radius: 50%;
   overflow: hidden;*/
   width: 23%;
