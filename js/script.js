@@ -114,9 +114,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modalImg) {
       modalImg.onload = () => {
         const naturalWidth = modalImg.naturalWidth;
+        const viewportWidth = window.innerWidth;
 
-        modalImg.style.maxWidth = `${naturalWidth}px`;
-        modalImg.style.width = "100%";
+        // 원본 사이즈의 100%까지만 보이도록 설정 (뷰포트보다 크면 100%로 제한)
+        if (naturalWidth > viewportWidth) {
+          modalImg.style.maxWidth = "100%";
+          modalImg.style.width = "auto";
+        } else {
+          modalImg.style.maxWidth = `${naturalWidth}px`;
+          modalImg.style.width = "auto";
+        }
 
         loader && (loader.style.display = "none");
         modalImg.style.display = "block";
@@ -161,5 +168,116 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     reveals.forEach((el) => observer.observe(el));
+  }
+
+  // ===============================
+  // Contact Form
+  // ===============================
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const phone = formData.get("phone");
+      const subject = formData.get("subject");
+      const message = formData.get("message");
+
+      // mailto 링크로 메일 보내기
+      const mailtoLink = `mailto:hyejii1022@naver.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(
+        `이름: ${name}\n이메일: ${email}\n전화번호: ${phone || "없음"}\n\n메시지:\n${message}`
+      )}`;
+
+      window.location.href = mailtoLink;
+    });
+  }
+
+  // ===============================
+  // Dark Mode Toggle
+  // ===============================
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const html = document.documentElement;
+
+  // localStorage에서 테마 설정 불러오기
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
+    html.setAttribute("data-theme", "dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+  }
+
+  // 테마 토글 기능
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
+
+  // ===============================
+  // Navigation Active State
+  // ===============================
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".side-nav a[href^='#']");
+
+  // 모든 sup 태그의 기본 색상 복원
+  function resetNavSupColors() {
+    navLinks.forEach((link) => {
+      const sup = link.querySelector("sup");
+      if (sup) {
+        sup.style.color = "";
+      }
+    });
+  }
+
+  // 특정 섹션의 네비게이션 sup 색상 변경
+  function setActiveNavSup(sectionId) {
+    resetNavSupColors();
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href === `#${sectionId}`) {
+        const sup = link.querySelector("sup");
+        if (sup) {
+          sup.style.color = "#00ca62";
+        }
+      }
+    });
+  }
+
+  // Intersection Observer로 섹션 감지
+  if (sections.length && navLinks.length) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute("id");
+          setActiveNavSup(sectionId);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+    // 페이지 로드 시 첫 번째 섹션 활성화
+    if (sections.length > 0) {
+      const firstSectionId = sections[0].getAttribute("id");
+      setActiveNavSup(firstSectionId);
+    }
   }
 });
