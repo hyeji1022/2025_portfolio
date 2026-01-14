@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startBlink() {
+      // 깜빡임 시작 시 액센트 컬러 적용
+      cursor.style.color = "#00ca62";
+      
       blinkInterval = setInterval(() => {
         cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
 
@@ -59,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (blinkCount >= maxBlink * 2) {
           clearInterval(blinkInterval);
           cursor.style.opacity = "1";
+          // 깜빡임 종료 시에도 액센트 컬러 유지
+          cursor.style.color = "#00ca62";
         }
       }, 300);
     }
@@ -98,9 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".project-thumb").forEach((link) => {
       link.addEventListener("click", (e) => {
+        // .soon 클래스가 있는 경우 클릭 비활성화
+        if (link.querySelector(".soon")) {
+          e.preventDefault();
+          return;
+        }
+
         e.preventDefault();
 
         const imgSrc = link.getAttribute("href");
+
+        // href가 비어있거나 없는 경우도 처리
+        if (!imgSrc || imgSrc === "") {
+          e.preventDefault();
+          return;
+        }
 
         modal.classList.add("active");
         loader && (loader.style.display = "block");
@@ -190,7 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const mailtoLink = `mailto:hyejii1022@naver.com?subject=${encodeURIComponent(
         subject
       )}&body=${encodeURIComponent(
-        `이름: ${name}\n이메일: ${email}\n전화번호: ${phone || "없음"}\n\n메시지:\n${message}`
+        `이름: ${name}\n이메일: ${email}\n전화번호: ${
+          phone || "없음"
+        }\n\n메시지:\n${message}`
       )}`;
 
       window.location.href = mailtoLink;
@@ -258,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
       root: null,
       rootMargin: "-20% 0px -60% 0px",
-      threshold: 0
+      threshold: 0,
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {

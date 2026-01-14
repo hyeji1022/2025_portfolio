@@ -200,10 +200,17 @@ ol {
   gap: 2.5rem;
 }
 
-.thumb-img {
+.thumb-datamenity {
   width: 100%;
   height: 350px;
-  background: url("./image/thumb_datamenity.png") center / cover no-repeat;
+  background: url("/image/thumb_datamenity.png") center / cover no-repeat;
+  margin-bottom: 0.8rem;
+}
+
+.thumb-heyvoca {
+  width: 100%;
+  height: 350px;
+  background: url("/image/thumb_heyvoca.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
 }
 
@@ -237,7 +244,6 @@ ol {
 /* Soon 클래스가 있는 경우 비활성화 스타일 */
 .project-thumb:has(.soon) .arrow-icon {
   opacity: 0.3;
-  cursor: not-allowed;
 }
 
 .project-thumb:has(.soon):hover .arrow-icon {
@@ -250,10 +256,18 @@ ol {
 }
 
 .soon::after {
-  content: "";
+  content: "soon";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
 /* ===== Modal Base ===== */
@@ -390,7 +404,7 @@ ol {
 }
 
 .profile-img {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -497,6 +511,7 @@ ol {
 .profile-cont ul .period {
   font-size: 0.9rem;
   color: var(--text-quaternary);
+  font-weight: 300;
 }
 
 .e-mail-icon svg {
@@ -519,13 +534,15 @@ ol {
 .contact-info {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 .contact-label {
-  font-size: 0.75rem;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 0.8rem;
   font-weight: 400;
   color: var(--text-quaternary);
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
 }
@@ -549,7 +566,6 @@ ol {
   font-size: 0.9rem;
   color: var(--text-tertiary);
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
 }
@@ -575,7 +591,7 @@ ol {
 }
 
 .form-field label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
   font-weight: 400;
   margin-bottom: 0.5rem;
@@ -608,6 +624,7 @@ ol {
 }
 
 .send-button {
+  width: 100%;
   margin-top: 1rem;
   padding: 0.8rem 2rem;
   border: 1px solid var(--text-secondary);
