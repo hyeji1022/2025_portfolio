@@ -86,7 +86,7 @@ ol {
 
 /* 좌측 네비게이션 */
 .title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
@@ -165,7 +165,7 @@ ol {
 #title {
   width: 100%;
   max-width: 1360px;
-  padding: 3rem 4rem 5rem;
+  padding: 3rem 4rem 10rem;
 }
 
 #title p {
@@ -203,14 +203,14 @@ ol {
 .thumb-datamenity {
   width: 100%;
   height: 350px;
-  background: url("/image/thumb_datamenity.png") center / cover no-repeat;
+  background: url("./image/thumb_datamenity.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
 }
 
 .thumb-heyvoca {
   width: 100%;
   height: 350px;
-  background: url("/image/thumb_heyvoca.png") center / cover no-repeat;
+  background: url("./image/thumb_heyvoca.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
 }
 

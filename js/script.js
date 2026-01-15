@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function startBlink() {
       // 깜빡임 시작 시 액센트 컬러 적용
       cursor.style.color = "#00ca62";
-      
+
       blinkInterval = setInterval(() => {
         cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
 
