@@ -35,7 +35,6 @@ body {
   color: var(--text-primary);
   display: flex;
   flex-direction: row;
-  letter-spacing: -0.01em;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -55,7 +54,7 @@ body {
 
 h1 {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   margin-bottom: 0.5rem;
   font-weight: 430;
   letter-spacing: -0.02em;
@@ -165,7 +164,7 @@ ol {
 #title {
   width: 100%;
   max-width: 1360px;
-  padding: 3rem 4rem 10rem;
+  padding: 3rem 4rem 0;
 }
 
 #title p {
@@ -194,6 +193,10 @@ ol {
   }
 }
 
+#projects {
+  padding-top: 10rem;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -203,15 +206,61 @@ ol {
 .thumb-datamenity {
   width: 100%;
   height: 350px;
-  background: url("../image/thumb_datamenity.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb-datamenity::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../image/thumb_datamenity.png") center / cover no-repeat;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.5s ease;
 }
 
 .thumb-heyvoca {
   width: 100%;
   height: 350px;
-  background: url("../image/thumb_heyvoca.png") center / cover no-repeat;
   margin-bottom: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb-heyvoca::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../image/thumb_heyvoca.png") center / cover no-repeat;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.thumb-heroworks {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb-heroworks::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../image/thumb_heroworks.png") center / cover no-repeat;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.project-thumb:hover .thumb-datamenity::before,
+.project-thumb:hover .thumb-heyvoca::before,
+.project-thumb:hover .thumb-heroworks::before {
+  transform: scale(1.05);
 }
 
 .project-thumb p {
@@ -387,7 +436,7 @@ ol {
   background: url("./image/profile2.png") no-repeat center/cover;
   border-radius: 50%;
   overflow: hidden;*/
-  width: 23%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -406,7 +455,7 @@ ol {
 .profile-img {
   font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
 }
 
 .profile-cont {
@@ -489,19 +538,20 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 4rem;
+  gap: 3rem;
   padding: 0.7rem 0 0.5rem;
   border-bottom: 1px solid var(--border-color);
   transition: border-color 0.3s ease;
 }
 
 .profile .profile-text {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   line-height: 1.5;
   color: var(--text-tertiary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.05em;
 }
 
 .profile-cont ul li:last-child {
@@ -637,12 +687,23 @@ ol {
   transition: all 0.3s ease;
   align-self: flex-end;
   margin-left: auto;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .send-button:hover {
   background: var(--accent-color);
   color: #fff;
   border-color: var(--accent-color);
+}
+
+.send-button .mail-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .send-button:focus {
